@@ -16,14 +16,14 @@ A PyTorch implementation of self-supervised semantic segmentation using SimCLR p
 
 ## 📋 Table of Contents
 
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Dataset Preparation](#dataset-preparation)
-- [Training](#training)
-- [Evaluation](#evaluation)
-- [Model Zoo](#model-zoo)
-- [Results](#results)
-- [Contributing](#contributing)
+- [🛠️ Installation](#installation)
+- [⚡ Quick Start](#quick-start)
+- [📊 Dataset Preparation](#dataset-preparation)
+- [🏋️ Training](#training)
+- [📈 Evaluation](#evaluation)
+- [🏆 Model Zoo](#model-zoo)
+- [📊 Results](#results)
+- [🤝 Contributing](#contributing)
 
 ## 🛠️ Installation
 
