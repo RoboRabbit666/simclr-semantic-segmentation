@@ -130,8 +130,8 @@ python src/evaluation/visualize.py --model_path path/to/model.pth
 - **Data efficiency**: Achieves 90% of full-data performance with only 50% data
 - **Robust across architectures**: Benefits observed with different backbone networks
 
-### Training Curves
-![Training Results](docs/images/training_curves.png)
+<!-- ### Training Curves
+![Training Results](docs/images/training_curves.png) -->
 
 ## 🔧 Configuration
 
