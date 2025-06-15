@@ -165,18 +165,6 @@ python scripts/finetune_segmentation.py \
   # (no --pretrained flag for baseline)
 ```
 
-### Interactive Exploration
-```bash
-# Launch Jupyter notebooks
-jupyter notebook notebooks/
-
-# Available notebooks:
-# 01_data_exploration.ipynb - Dataset analysis
-# 02_simclr_pretraining.ipynb - Interactive pretraining
-# 03_segmentation_finetune.ipynb - Fine-tuning experiments  
-# 04_results_analysis.ipynb - Results visualization
-```
-
 ## 📁 Project Structure
 
 ```
@@ -202,7 +190,6 @@ simclr-semantic-segmentation/
 ├── experiments/               # Results and models
 │   ├── pretrained_models/     # Saved checkpoints
 │   └── results/              # Training logs and metrics
-├── notebooks/                 # Interactive analysis
 └── docs/                     # Documentation and reports
     └── Project_Report.pdf     # Full research report
 ```
