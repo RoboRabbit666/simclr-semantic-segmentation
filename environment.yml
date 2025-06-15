@@ -1,0 +1,19 @@
+name: simclr-segmentation
+channels:
+  - pytorch
+  - conda-forge
+  - huggingface
+dependencies:
+  - python=3.8
+  - pytorch>=1.9.0
+  - torchvision>=0.10.0
+  - cudatoolkit=11.3
+  - numpy>=1.21.0
+  - matplotlib>=3.5.0
+  - pip
+  - pip:
+    - datasets>=1.18.0
+    - segmentation-models-pytorch>=0.3.0
+    - wandb>=0.12.0
+    - omegaconf>=2.1.0
+    - hydra-core>=1.1.0

@@ -1,0 +1,38 @@
+# Segmentation Fine-tuning Configuration for Oxford Pets Dataset
+
+model:
+  backbone: resnet50
+  decoder: unet
+  pretrained_path: experiments/pretrained_models/pets_simclr_backbone.ckpt
+  freeze_backbone: false
+
+training:
+  batch_size: 32
+  learning_rate: 1e-4
+  epochs: 60
+  optimizer: Adam
+  loss_function: BCE
+  eval_frequency: 2
+
+data:
+  dataset: oxford_pets
+  images_dir: experiments/data/images
+  masks_dir: experiments/data/annotations/trimaps
+  data_ratio: 0.8
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  image_size: 224
+  normalize: true
+
+experiment:
+  name: pets_segmentation_finetune
+  save_dir: experiments/results
+  log_dir: experiments/logs
+  metrics:
+    - IoU
+    - F1_micro
+    - F1_macro
+    - Dice_loss
+    - Focal_loss
+    - BCE_loss

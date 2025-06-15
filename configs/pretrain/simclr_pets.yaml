@@ -1,0 +1,29 @@
+# SimCLR Pretraining Configuration for Cats vs Dogs Dataset
+
+model:
+  backbone: resnet50
+  projection_dim: 128
+  hidden_dim: 512
+  temperature: 0.1
+
+training:
+  batch_size: 120
+  accumulation_steps: 8
+  learning_rate: 0.3
+  epochs: 20
+  optimizer: LARS
+  weight_decay: 1e-6
+
+data:
+  dataset: cats_vs_dogs
+  image_size: 224
+  augmentations:
+    color_distortion_strength: 1.0
+    gaussian_blur_kernel: 23
+    gaussian_blur_sigma: [0.1, 2.0]
+
+experiment:
+  name: simclr_pets_pretraining
+  save_dir: experiments/pretrained_models
+  log_dir: experiments/logs
+  save_frequency: 5
