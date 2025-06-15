@@ -19,6 +19,8 @@ This project investigates two key research questions:
 - **Domain similarity**: Pretraining dataset similarity has minimal impact on final segmentation performance
 - **Scalability**: Model performance benefits significantly from larger fine-tuning dataset sizes
 
+📋 **Full Project Report**: For detailed methodology, extended analysis, and comprehensive results, see the complete project report [here](docs/Project_Report.pdf).
+
 ## 🏗️ Methodology
 
 ### Two-Stage Learning Pipeline
