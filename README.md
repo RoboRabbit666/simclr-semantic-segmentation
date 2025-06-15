@@ -14,6 +14,21 @@ A PyTorch implementation of self-supervised semantic segmentation using SimCLR p
 - **Configurable training pipeline** with YAML-based configuration system
 - **Extensive evaluation** including IoU, F1-score, and visualization tools
 
+## 📋 Table of Contents
+
+- [🚀 Key Features](#key-features)
+- [🛠️ Installation](#installation)
+- [⚡ Quick Start](#quick-start)
+- [📊 Dataset Preparation](#dataset-preparation)
+- [🏋️ Training](#training)
+- [📈 Evaluation](#evaluation)
+- [🏆 Model Zoo](#model-zoo)
+- [📊 Results](#results)
+- [🔧 Configuration](#configuration)
+- [🤝 Contributing](#contributing)
+- [📄 License](#license)
+- [🙏 Acknowledgments](#acknowledgments)
+
 ## 🛠️ Installation
 
 ### Option 1: Conda Environment (Recommended)
