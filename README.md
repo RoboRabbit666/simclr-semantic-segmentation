@@ -24,14 +24,13 @@ A PyTorch implementation of self-supervised semantic segmentation using SimCLR p
 - [Model Zoo](#model-zoo)
 - [Results](#results)
 - [Contributing](#contributing)
-- [Citation](#citation)
 
 ## 🛠️ Installation
 
 ### Option 1: Conda Environment (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/simclr-semantic-segmentation.git
+git clone https://github.com/RoboRabbit666/simclr-semantic-segmentation.git
 cd simclr-semantic-segmentation
 
 # Create conda environment
@@ -175,17 +174,6 @@ data:
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📝 Citation
-
-```bibtex
-@article{simclr_segmentation2024,
-  title={Self-Supervised Semantic Segmentation with SimCLR},
-  author={Your Name},
-  journal={arXiv preprint arXiv:2024.xxxxx},
-  year={2024}
-}
-```
 
 ## 📄 License
 
