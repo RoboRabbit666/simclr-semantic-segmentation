@@ -6,7 +6,7 @@
 
 A comprehensive PyTorch implementation exploring the effectiveness of **SimCLR self-supervised pretraining** for semantic segmentation tasks. This research project demonstrates how contrastive learning can improve data efficiency and performance in dense prediction tasks through systematic experimentation on the Oxford-IIIT Pet Dataset.
 
-## 🎯 Research Overview
+## Research Overview
 
 This project investigates two key research questions:
 
@@ -15,22 +15,22 @@ This project investigates two key research questions:
 
 ### Key Findings
 - SimCLR pretraining achieves **comparable performance** (0.90 IoU) to fully supervised baselines
-- **Data efficiency**: Pre-trained models maintain performance with significantly less labeled data
+- **Data efficiency**: Pre-trained models maintain performance with significantly less labelled data
 - **Domain similarity**: Pretraining dataset similarity has minimal impact on final segmentation performance
 - **Scalability**: Model performance benefits significantly from larger fine-tuning dataset sizes
 
-📋 **Full Project Report**: For detailed methodology, extended analysis, and comprehensive results, see the complete project report [here](docs/Project_Report.pdf).
+**Full Project Report**: For detailed methodology, extended analysis, and comprehensive results, see the complete project report [here](docs/Project_Report.pdf).
 
-## 🏗️ Methodology
+## Methodology
 
 ### Two-Stage Learning Pipeline
 
 #### Stage 1: Self-Supervised Pretraining (SimCLR)
-- **Backbone**: ResNet-50 (trained from scratch, no ImageNet initialization)
+- **Backbone**: ResNet-50 (trained from scratch, no ImageNet initialisation)
 - **Projection Head**: 2-layer MLP (2048 → 512 → 128) with ReLU activation
-- **Data Augmentation**: Random cropping/resizing, color jittering, Gaussian blur
+- **Data Augmentation**: Random cropping/resizing, colour jittering, Gaussian blur
 - **Loss Function**: NT-Xent (Normalized Temperature-scaled Cross Entropy, τ=0.1)
-- **Optimizer**: LARS with learning rate 0.3, momentum 0.9
+- **Optimiser**: LARS with learning rate 0.3, momentum 0.9
 - **Training**: 20 epochs (GPU resource constrained)
 
 #### Stage 2: Supervised Fine-tuning
@@ -40,7 +40,7 @@ This project investigates two key research questions:
 - **Optimizer**: Adam with learning rate 1e-4
 - **Training**: 60 epochs with validation monitoring
 
-## 📊 Experimental Design
+## Experimental Design
 
 ### Datasets Used
 
@@ -64,7 +64,7 @@ This project investigates two key research questions:
 #### Experiment 2: Data Efficiency Analysis
 - **Dataset Ratios**: 80%, 50%, 20% of development data
 - **Fixed Test Set**: 20% held constant across all experiments
-- **Purpose**: Evaluate pretraining benefits with limited labeled data
+- **Purpose**: Evaluate pretraining benefits with limited labelled data
 
 #### Experiment 3: Domain Similarity Investigation
 - **CIFAR-10 Pretraining**: General visual features across diverse object categories
@@ -94,7 +94,7 @@ This project investigates two key research questions:
 3. **Minimal Domain Impact**: CIFAR-10 vs Cats&Dogs pretraining shows negligible performance difference
 4. **Dataset Size Dependency**: Performance scales significantly with fine-tuning dataset size
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### System Requirements
 - Python 3.8+
@@ -128,7 +128,7 @@ matplotlib
 seaborn
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Reproduce Research Experiments
 
@@ -167,7 +167,7 @@ python scripts/finetune_segmentation.py \
   # (no --pretrained flag for baseline)
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 simclr-semantic-segmentation/
@@ -196,7 +196,7 @@ simclr-semantic-segmentation/
     └── Project_Report.pdf     # Full research report
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### SimCLR Pretraining Configuration
 ```yaml
@@ -237,7 +237,7 @@ data:
   test_ratio: 0.2  # fixed test set
 ```
 
-## 🔬 Evaluation Metrics
+## Evaluation Metrics
 
 The project uses comprehensive evaluation metrics:
 - **IoU (Intersection over Union)**: Primary segmentation metric
@@ -248,39 +248,39 @@ The project uses comprehensive evaluation metrics:
 - **Pixel Accuracy**: Simple classification accuracy
 - **Recall**: True positive rate
 
-## 📊 Research Implications
+## Research Implications
 
 ### Self-Supervised Learning Benefits
-- Reduces dependency on large labeled datasets
+- Reduces dependency on large labelled datasets
 - Maintains performance with limited supervision
 - Provides general feature representations transferable across domains
 
 ### Data Efficiency Insights
-- Pretraining shows largest benefits with limited labeled data (20-50% splits)
+- Pretraining showsthe  largest benefits with limited labelled data (20-50% splits)
 - Performance degradation is less severe for pretrained models with reduced data
 - Suggests practical applications for label-scarce scenarios
 
 ### Domain Transfer Findings
 - Pretraining dataset domain has minimal impact on final performance
 - General visual features (CIFAR-10) transfer as well as domain-specific features (Cats&Dogs)
-- Supports using diverse pretraining data even for specialized downstream tasks
+- Supports using diverse pretraining data even for specialised downstream tasks
 
-## ⚠️ Limitations & Future Work
+## Limitations & Future Work
 
 ### Current Limitations
 - **Limited Pretraining**: Only 20 epochs due to computational constraints
 - **Binary Segmentation**: No multi-class segmentation evaluation
 - **Single Architecture**: Limited to ResNet-50 + U-Net combination
-- **Dataset Scope**: Focused on Oxford Pets dataset only
+- **Dataset Scope**: Focused on the Oxford Pets dataset only
 
 ### Suggested Future Work
 - Extended pretraining (100+ epochs) with larger computational resources
 - Multi-class segmentation experiments
 - Alternative backbone architectures (Vision Transformers, EfficientNet)
-- Cross-dataset generalization studies
-- Hyperparameter optimization (temperature τ, learning rates)
+- Cross-dataset generalisation studies
+- Hyperparameter optimisation (temperature τ, learning rates)
 
-## 📚 References & Citation
+## References & Citation
 
 ### Original Research Papers
 ```bibtex
@@ -304,13 +304,13 @@ The project uses comprehensive evaluation metrics:
 - [U-Net Paper](https://arxiv.org/abs/1505.04597) - Segmentation architecture
 - [Oxford-IIIT Pet Dataset](https://www.robots.ox.ac.uk/~vgg/data/pets/) - Benchmark dataset
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **Academic Research**: University College London Computer Vision coursework
+- **Academic Research**: UCL CV coursework
 - **Computational Resources**: A100 GPU access for pretraining experiments
 - **Open Source Libraries**: PyTorch, segmentation-models-pytorch, HuggingFace datasets
 - **Dataset Providers**: Oxford Visual Geometry Group, CIFAR-10 contributors
