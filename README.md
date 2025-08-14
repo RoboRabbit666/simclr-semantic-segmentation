@@ -6,6 +6,35 @@
 
 A comprehensive PyTorch implementation exploring the effectiveness of **SimCLR self-supervised pretraining** for semantic segmentation tasks. This research project demonstrates how contrastive learning can improve data efficiency and performance in dense prediction tasks through systematic experimentation on the Oxford-IIIT Pet Dataset.
 
+## Project Structure
+
+```
+simclr-semantic-segmentation/
+├── configs/                     # Experiment configurations
+│   ├── pretrain/               # SimCLR pretraining configs
+│   │   ├── simclr_cifar10.yaml
+│   │   └── simclr_pets.yaml
+│   └── finetune/               # Segmentation configs
+│       └── pets_segmentation.yaml
+├── src/                        # Source code
+│   ├── models/                 # Model implementations
+│   │   ├── simclr.py          # SimCLR framework
+│   │   ├── backbones.py       # ResNet architectures
+│   │   └── losses.py          # Loss functions (BCE, Dice, Focal)
+│   ├── data/                  # Data handling
+│   │   ├── datasets.py        # Dataset classes
+│   │   └── transforms.py      # Augmentation pipelines
+│   └── training/              # Training utilities
+├── scripts/                   # Training scripts
+│   ├── pretrain_simclr.py     # Self-supervised pretraining
+│   └── finetune_segmentation.py # Segmentation fine-tuning
+├── experiments/               # Results and models
+│   ├── pretrained_models/     # Saved checkpoints
+│   └── results/              # Training logs and metrics
+└── docs/                     # Documentation and reports
+    └── Project_Report.pdf     # Full research report
+```
+
 ## Research Overview
 
 This project investigates two key research questions:
@@ -71,7 +100,7 @@ This project investigates two key research questions:
 - **Cats&Dogs Pretraining**: Domain-specific animal features
 - **Research Question**: Impact of pretraining-finetuning domain similarity
 
-## 📈 Results & Performance
+## Results & Performance
 
 ### Model Performance Summary
 
@@ -167,35 +196,6 @@ python scripts/finetune_segmentation.py \
   # (no --pretrained flag for baseline)
 ```
 
-## Project Structure
-
-```
-simclr-semantic-segmentation/
-├── configs/                     # Experiment configurations
-│   ├── pretrain/               # SimCLR pretraining configs
-│   │   ├── simclr_cifar10.yaml
-│   │   └── simclr_pets.yaml
-│   └── finetune/               # Segmentation configs
-│       └── pets_segmentation.yaml
-├── src/                        # Source code
-│   ├── models/                 # Model implementations
-│   │   ├── simclr.py          # SimCLR framework
-│   │   ├── backbones.py       # ResNet architectures
-│   │   └── losses.py          # Loss functions (BCE, Dice, Focal)
-│   ├── data/                  # Data handling
-│   │   ├── datasets.py        # Dataset classes
-│   │   └── transforms.py      # Augmentation pipelines
-│   └── training/              # Training utilities
-├── scripts/                   # Training scripts
-│   ├── pretrain_simclr.py     # Self-supervised pretraining
-│   └── finetune_segmentation.py # Segmentation fine-tuning
-├── experiments/               # Results and models
-│   ├── pretrained_models/     # Saved checkpoints
-│   └── results/              # Training logs and metrics
-└── docs/                     # Documentation and reports
-    └── Project_Report.pdf     # Full research report
-```
-
 ## Configuration
 
 ### SimCLR Pretraining Configuration
@@ -248,56 +248,6 @@ The project uses comprehensive evaluation metrics:
 - **Pixel Accuracy**: Simple classification accuracy
 - **Recall**: True positive rate
 
-## Research Implications
-
-### Self-Supervised Learning Benefits
-- Reduces dependency on large labelled datasets
-- Maintains performance with limited supervision
-- Provides general feature representations transferable across domains
-
-### Data Efficiency Insights
-- Pretraining showsthe  largest benefits with limited labelled data (20-50% splits)
-- Performance degradation is less severe for pretrained models with reduced data
-- Suggests practical applications for label-scarce scenarios
-
-### Domain Transfer Findings
-- Pretraining dataset domain has minimal impact on final performance
-- General visual features (CIFAR-10) transfer as well as domain-specific features (Cats&Dogs)
-- Supports using diverse pretraining data even for specialised downstream tasks
-
-## Limitations & Future Work
-
-### Current Limitations
-- **Limited Pretraining**: Only 20 epochs due to computational constraints
-- **Binary Segmentation**: No multi-class segmentation evaluation
-- **Single Architecture**: Limited to ResNet-50 + U-Net combination
-- **Dataset Scope**: Focused on the Oxford Pets dataset only
-
-### Suggested Future Work
-- Extended pretraining (100+ epochs) with larger computational resources
-- Multi-class segmentation experiments
-- Alternative backbone architectures (Vision Transformers, EfficientNet)
-- Cross-dataset generalisation studies
-- Hyperparameter optimisation (temperature τ, learning rates)
-
-## References & Citation
-
-### Original Research Papers
-```bibtex
-@article{chen2020simple,
-  title={A simple framework for contrastive learning of visual representations},
-  author={Chen, Ting and Kornblith, Simon and Norouzi, Mohammad and Hinton, Geoffrey},
-  journal={International Conference on Machine Learning},
-  year={2020}
-}
-
-@inproceedings{parkhi2012cats,
-  title={Cats and dogs},
-  author={Parkhi, Omkar M and Vedaldi, Andrea and Zisserman, Andrew and Jawahar, CV},
-  booktitle={IEEE Conference on Computer Vision and Pattern Recognition},
-  year={2012}
-}
-```
 
 ### Key References
 - [SimCLR Paper](https://arxiv.org/abs/2002.05709) - Original contrastive learning framework
